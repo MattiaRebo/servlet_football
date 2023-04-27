@@ -1,6 +1,7 @@
 package model;
 
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -27,16 +28,43 @@ public class MatchDAOAPI {
 
     }
 
-    public ArrayList<MatchBean> getMatches() throws IOException, InterruptedException {
-        String stringRequest = "https://api.football-data.org/v4/competitions/SA/matches?matchday=31";
+    public ArrayList<MatchBean> getMatches(int matchday, int season) throws IOException, InterruptedException {
+        String stringRequest = "https://api.football-data.org/v4/competitions/SA/matches?matchday="+matchday+"&season="+season;
+        //request
         HttpRequest request = requestAPI(stringRequest);
+        //response
         HttpResponse<String> response = response(request);
-
+        //response in json object
         JSONObject json = new JSONObject(response.body());
-        String js = response.body();
+        //Array daily matches
+        JSONArray matchesJSON = json.getJSONArray("matches");
 
         ArrayList<MatchBean> matches = new ArrayList<>();
 
+        for (int i = 0; i < matchesJSON.length(); i++){
+            JSONObject Object = matchesJSON.getJSONObject(i);
+            int matchID = Object.getInt("id");
+
+            int awayTeamID = Object.getJSONObject("awayTeam").getInt("id");
+            int homeTeamID = Object.getJSONObject("homeTeam").getInt("id");
+            String awayTeam = Object.getJSONObject("awayTeam").getString("name");
+            String homeTeam = Object.getJSONObject("homeTeam").getString("name");
+            String awayTeamCrest = Object.getJSONObject("awayTeam").getString("crest");
+            String homeTeamCrest = Object.getJSONObject("homeTeam").getString("crest");
+            String date = Object.getString("utcDate");
+            int awayScore = Object.getJSONObject("score").getJSONObject("fullTime").getInt("away");
+            int homeScore = Object.getJSONObject("score").getJSONObject("fullTime").getInt("home");
+
+            MatchBean match = new MatchBean(matchID, date, season, matchday, homeTeamID, awayTeamID, homeTeam, awayTeam, homeScore, awayScore, homeTeamCrest, awayTeamCrest);
+            matches.add(match);
+        }
+
+
+        /*System.out.println(json);
+
+        System.out.println(matches.size());
+        System.out.println(matches.get(6).getHomeTeam() +"- "+matches.get(6).getAwayTeam());
+        */
         return matches;
     }
 }
