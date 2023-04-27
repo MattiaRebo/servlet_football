@@ -1,0 +1,40 @@
+@import url('https://fonts.cdnfonts.com/css/switzer');
+@import url('https://fonts.cdnfonts.com/css/monument-extended');
+
+
+:root{
+    --title-blue: #1c1c9e;
+    --squadre: #1616e8;
+    --bs-font-sans-serif: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+} 
+
+#head2head{
+    background-color: white;
+}
+
+#head2head .row:hover{
+    background-color: rgb(209, 230, 238, .4);
+}
+
+#time{
+    font-size: 0.7rem; 
+    color: #817f7f;
+    font-weight: bold;
+}
+
+#title{
+    color: var(--title-blue);
+    font-family: 'Monument Extended';
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    vertical-align: middle;
+}
+
+
+#head2head #squadre{
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: Switzer;
+}
