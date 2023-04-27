@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app>
+    <servlet>
+        <servlet-name>RoundMatch</servlet-name>
+        <servlet-class>servlet.servletMatch</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RoundMatch</servlet-name>
+        <url-pattern>/match</url-pattern>
+    </servlet-mapping>
+</web-app>
