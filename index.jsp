@@ -24,53 +24,54 @@
 </head>
 <body>
     <div class="m-5">
-        <div class="row g-2">
-            <div class="col-7 text-center" id="title">
+        <div class="row g-2 align-middle">
+            <div class="col-7 text-center " id="title">
+                <div style="height: 20px;display: block"></div>
                 Calendario e risultati
             </div>
             <div class="col-5">
                 <div class="row justify-content-around">
                     <div class="col-2">
                         <div>Giornata</div>
-                        <select class="form-select form-select-sm w-auto" id="dropdown_matchday" aria-label=".form-select-sm example">
-                            <option value="38">38<sup>a</sup> giornata</option>
-                            <option value="37">37<sup>a</sup> giornata</option>
-                            <option value="36">36<sup>a</sup> giornata</option>
-                            <option value="35">35<sup>a</sup> giornata</option>
-                            <option value="34">34<sup>a</sup> giornata</option>
-                            <option value="33">33<sup>a</sup> giornata</option>
-                            <option value="32">32<sup>a</sup> giornata</option>
-                            <option value="31">31<sup>a</sup> giornata</option>
-                            <option value="30">30<sup>a</sup> giornata</option>
-                            <option value="29">29<sup>a</sup> giornata</option>
-                            <option value="28">28<sup>a</sup> giornata</option>
-                            <option value="27">27<sup>a</sup> giornata</option>
-                            <option value="26">26<sup>a</sup> giornata</option>
-                            <option value="25">25<sup>a</sup> giornata</option>
-                            <option value="24">24<sup>a</sup> giornata</option>
-                            <option value="23">23<sup>a</sup> giornata</option>
-                            <option value="22">22<sup>a</sup> giornata</option>
-                            <option value="21">21<sup>a</sup> giornata</option>
-                            <option value="20">20<sup>a</sup> giornata</option>
-                            <option value="19">19<sup>a</sup> giornata</option>
-                            <option value="18">18<sup>a</sup> giornata</option>
-                            <option value="17">17<sup>a</sup> giornata</option>
-                            <option value="16">16<sup>a</sup> giornata</option>
-                            <option value="15">15<sup>a</sup> giornata</option>
-                            <option value="14">14<sup>a</sup> giornata</option>
-                            <option value="13">13<sup>a</sup> giornata</option>
-                            <option value="12">12<sup>a</sup> giornata</option>
-                            <option value="11">11<sup>a</sup> giornata</option>
-                            <option value="10">10<sup>a</sup> giornata</option>
-                            <option value="9">9<sup>a</sup> giornata</option>
-                            <option value="8">8<sup>a</sup> giornata</option>
-                            <option value="7">7<sup>a</sup> giornata</option>
-                            <option value="6">6<sup>a</sup> giornata</option>
-                            <option value="5">5<sup>a</sup> giornata</option>
-                            <option value="4">4<sup>a</sup> giornata</option>
-                            <option value="3">3<sup>a</sup> giornata</option>
-                            <option value="2">2<sup>a</sup> giornata</option>
-                            <option value="1">1<sup>a</sup> giornata</option>
+                        <select class="form-select form-select-sm w-auto" id="dropdown_matchday" name="dropdown_matchday" aria-label=".form-select-sm example">
+                            <option value="38"><a href="http://localhost:8080/servlet_football/match">38a giornata</a></option>
+                            <option value="37">37a giornata</option>
+                            <option value="36">36a giornata</option>
+                            <option value="35">35a giornata</option>
+                            <option value="34">34a giornata</option>
+                            <option value="33">33a giornata</option>
+                            <option value="32">32a giornata</option>
+                            <option value="31">31a giornata</option>
+                            <option value="30">30a giornata</option>
+                            <option value="29">29a giornata</option>
+                            <option value="28">28a giornata</option>
+                            <option value="27">27a giornata</option>
+                            <option value="26">26a giornata</option>
+                            <option value="25">25a giornata</option>
+                            <option value="24">24a giornata</option>
+                            <option value="23">23a giornata</option>
+                            <option value="22">22a giornata</option>
+                            <option value="21">21a giornata</option>
+                            <option value="20">20a giornata</option>
+                            <option value="19">19a giornata</option>
+                            <option value="18">18a giornata</option>
+                            <option value="17">17a giornata</option>
+                            <option value="16">16a giornata</option>
+                            <option value="15">15a giornata</option>
+                            <option value="14">14a giornata</option>
+                            <option value="13">13a giornata</option>
+                            <option value="12">12a giornata</option>
+                            <option value="11">11a giornata</option>
+                            <option value="10">10a giornata</option>
+                            <option value="9">9a giornata</option>
+                            <option value="8">8a giornata</option>
+                            <option value="7">7a giornata</option>
+                            <option value="6">6a giornata</option>
+                            <option value="5">5a giornata</option>
+                            <option value="4">4a giornata</option>
+                            <option value="3">3a giornata</option>
+                            <option value="2">2a giornata</option>
+                            <option value="1">1a giornata</option>
                         </select>
                     </div>
                     <div class="col-3">
@@ -97,11 +98,13 @@
                     <div class="col-4 text-end">
                             ${match.homeTeam}&ensp;
                         <img src="${match.homeTeamCrest}" height="25" width="25">
+                            ${match.homeScore}
                     </div>
                     <div class="col-1 text-center" style="color: #2047e3;">
                         VS
                     </div>
                     <div class="col-4 text-left">
+                            ${match.awayScore}
                         <img src="${match.awayTeamCrest}" height="25" width="25">&ensp;${match.awayTeam}
                     </div>
                 </div>
@@ -120,7 +123,25 @@
         // set select options with jquery and EL
         $("#dropdown_matchday").val("${matchday}");
         $("#dropdown_season").val("${season}");
+
+        $("#dropdown_season").on('change', function (){
+            var match = document.getElementById("dropdown_matchday").value;
+            var season = document.getElementById("dropdown_season").value;
+            var link = "http://localhost:8080/servlet_football/match?matchday="+match+"&season="+season;
+
+            document.open(link, "_self", "get");
+        });
+
+        $("#dropdown_matchday").on('change', function (){
+            var match = document.getElementById("dropdown_matchday").value;
+            var season = document.getElementById("dropdown_season").value;
+            var link = "http://localhost:8080/servlet_football/match?matchday="+match+"&season="+season;
+
+            document.open(link, "_self", "get");
+        });
     });
+
+
 </script>
 
 

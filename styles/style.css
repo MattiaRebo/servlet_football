@@ -27,8 +27,8 @@
     color: var(--title-blue);
     font-family: 'Monument Extended';
     text-transform: uppercase;
-    font-size: 1.8rem;
-    vertical-align: middle;
+    font-size: 2rem;
+    margin-top: 50px;
 }
 
 
