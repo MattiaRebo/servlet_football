@@ -25,13 +25,11 @@
 <body>
     <div class="m-5">
         <div class="row g-2 align-middle">
-            <div class="col-7 text-center " id="title">
-                <div style="height: 20px;display: block"></div>
+            <div class="col-7 text-center" id="title">
                 Calendario e risultati
             </div>
-            <div class="col-5">
-                <div class="row justify-content-around">
-                    <div class="col-2">
+            <div class="col-5 row d-flex justify-content-around align-bottom">
+                    <div class="col-2 align-bottom">
                         <div>Giornata</div>
                         <select class="form-select form-select-sm w-auto" id="dropdown_matchday" name="dropdown_matchday" aria-label=".form-select-sm example">
                             <option value="38"><a href="http://localhost:8080/servlet_football/match">38a giornata</a></option>
@@ -80,10 +78,8 @@
                             <option value="2022">2022/2023</option>
                             <option value="2021">2021/2022</option>
                             <option value="2020">2020/2021</option>
-                            <option value="2019">2019/2020</option>
                         </select>
                     </div>
-                </div>
             </div>
         </div>
         
@@ -98,17 +94,17 @@
                     <div class="col-4 text-end">
                             ${match.homeTeam}&ensp;
                         <img src="${match.homeTeamCrest}" height="25" width="25">
-                            ${match.homeScore}
+                        &ensp;&ensp;${match.homeScore}
                     </div>
                     <div class="col-1 text-center" style="color: #2047e3;">
                         VS
                     </div>
                     <div class="col-4 text-left">
-                            ${match.awayScore}
+                            ${match.awayScore}&ensp;&ensp;
                         <img src="${match.awayTeamCrest}" height="25" width="25">&ensp;${match.awayTeam}
                     </div>
                 </div>
-                <div class="col-1 text-end">ciao</div>
+                <div class="col-1 text-end" ID="status">${match.status}</div>
             </div>
         </c:forEach>
             <br>

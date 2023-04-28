@@ -16,6 +16,7 @@ public class servletMatch extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int matchday = 1;
         int season = 2022;
+        String competizione = ""; //TODO
 
         if(req.getParameter("matchday") != null){
             matchday = Integer.parseInt(req.getParameter("matchday"));

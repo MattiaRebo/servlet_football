@@ -17,6 +17,10 @@
     background-color: rgb(209, 230, 238, .4);
 }
 
+.competition{
+    background-color: white;
+}
+
 #time{
     font-size: 1rem;
     color: #817f7f;
@@ -33,7 +37,14 @@
 
 
 #head2head #squadre{
-    font-size: 1.2rem;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: Switzer;
+}
+
+#head2head #status{
+    font-size: 1.3rem;
     text-transform: uppercase;
     font-weight: 600;
     font-family: Switzer;

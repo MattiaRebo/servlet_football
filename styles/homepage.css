@@ -1,0 +1,72 @@
+body{
+    background-color: #f8f8f8;
+}
+
+:root{
+    --rounded-corner: 0.25rem;
+}
+
+*, .body {
+    background-color: #f8f8f8;
+}
+
+.competition, .competition div, .competition img{
+    background-color: white;
+
+}
+.competition{
+    display: block;
+    top: 0px;
+    position: relative;
+    max-width: 262px;
+    background-color: white;
+    border-radius: 4px;
+    padding: 1.7rem 1.4rem;
+    margin: 0.7rem;
+    text-decoration: none;
+    z-index: 0;
+    overflow: hidden;
+    border: 1px solid #f2f8f9;
+}
+
+/*COMPETIZIONE text*/
+.comptext{
+    font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, serif;
+    color: #6d6a7f;
+    font-weight: bold;
+}
+
+/*Categoria del testo dentro il div, es Serie A*/
+.catext{
+    font-weight: bold;
+}
+
+.competition:hover {
+    transition: all 0.2s ease-out;
+    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+    top: -4px;
+    background-color: white;
+    left: -3px;
+    border-radius: var(--rounded-corner);
+    border: 2px solid;
+    border-color: #817f7f;
+    cursor: pointer;
+ }
+
+.competition:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(2);
+    transform-origin: 50% 50%;
+    transition: transform 0.15s ease-out;
+ }
+
+.competition:hover:before {
+    transform: scale(2.15);
+ }

@@ -11,11 +11,12 @@ public class MatchBean {
     int IDawayTeam;
     int homeScore;
     int awayScore;
+    String status;
 
     String homeTeamCrest;
     String awayTeamCrest;
 
-    public MatchBean(int id, String date, int season, int round, int IDhomeTeam, int IDawayTeam, String homeTeam, String awayTeam, int homeScore, int awayScore, String homeTeamCrest, String awayTeamCrest) {
+    public MatchBean(int id, String date, int season, int round, int IDhomeTeam, int IDawayTeam, String homeTeam, String awayTeam, int homeScore, int awayScore, String homeTeamCrest, String awayTeamCrest, String status) {
         this.id = id;
         this.date = date;
         this.season = season;
@@ -28,6 +29,15 @@ public class MatchBean {
         this.awayTeamCrest = awayTeamCrest;
         this.homeTeam = homeTeam;
         this.awayTeam = awayTeam;
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public int getId() {

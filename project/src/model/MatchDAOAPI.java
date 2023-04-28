@@ -10,6 +10,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class MatchDAOAPI {
     private static final String API_KEY = "6aa0297c2bf5461eb299dd08f42e859e";
@@ -52,10 +53,25 @@ public class MatchDAOAPI {
             String awayTeamCrest = Object.getJSONObject("awayTeam").getString("crest");
             String homeTeamCrest = Object.getJSONObject("homeTeam").getString("crest");
             String date = Object.getString("utcDate");
-            int awayScore = Object.getJSONObject("score").getJSONObject("fullTime").getInt("away");
-            int homeScore = Object.getJSONObject("score").getJSONObject("fullTime").getInt("home");
+            String status = Object.getString("status");
+            int awayScore = 0;
+            int homeScore = 0;
+            if(Objects.equals(status, "FINISHED") || Objects.equals(status, "IN_PLAY") || Objects.equals(status, "PAUSED")){
+                awayScore = Object.getJSONObject("score").getJSONObject("fullTime").getInt("away");
+                homeScore = Object.getJSONObject("score").getJSONObject("fullTime").getInt("home");
+            }
 
-            MatchBean match = new MatchBean(matchID, date, season, matchday, homeTeamID, awayTeamID, homeTeam, awayTeam, homeScore, awayScore, homeTeamCrest, awayTeamCrest);
+            switch (status) {
+                case "FINISHED" -> status = "FINITA";
+                case "IN_PLAY" -> status = "IN GIOCO";
+                case "PAUSED" -> status = "IN PAUSA";
+                case "TIMED", "SCHEDULED" -> status = "DA GIOCARE";
+                case "POSTPONED" -> status = "POSTICIPATA";
+                case "CANCELLED" -> status = "CANCELLATA";
+            }
+
+
+            MatchBean match = new MatchBean(matchID, date, season, matchday, homeTeamID, awayTeamID, homeTeam, awayTeam, homeScore, awayScore, homeTeamCrest, awayTeamCrest, status);
             matches.add(match);
         }
 
