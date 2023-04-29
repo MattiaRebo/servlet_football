@@ -29,8 +29,8 @@ public class MatchDAOAPI {
 
     }
 
-    public ArrayList<MatchBean> getMatches(int matchday, int season) throws IOException, InterruptedException {
-        String stringRequest = "https://api.football-data.org/v4/competitions/SA/matches?matchday="+matchday+"&season="+season;
+    public ArrayList<MatchBean> getMatches(int matchday, int season, String comp) throws IOException, InterruptedException {
+        String stringRequest = "https://api.football-data.org/v4/competitions/"+comp+"/matches?matchday="+matchday+"&season="+season;
         //request
         HttpRequest request = requestAPI(stringRequest);
         //response

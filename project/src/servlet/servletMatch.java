@@ -16,7 +16,7 @@ public class servletMatch extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int matchday = 1;
         int season = 2022;
-        String competizione = ""; //TODO
+        String competizione = "SA";
 
         if(req.getParameter("matchday") != null){
             matchday = Integer.parseInt(req.getParameter("matchday"));
@@ -24,11 +24,16 @@ public class servletMatch extends HttpServlet {
         if(req.getParameter("season") != null){
             season = Integer.parseInt(req.getParameter("season"));
         }
+        if(req.getParameter("competition") != null){
+            competizione = req.getParameter("competition");
+            System.out.println("comp: "+competizione);
+        }
         MatchDAOAPI matches = new MatchDAOAPI();
         try {
             req.setAttribute("matchday", matchday);
             req.setAttribute("season", season);
-            req.setAttribute("matches", matches.getMatches(matchday, season));
+            req.setAttribute("competition", competizione);
+            req.setAttribute("matches", matches.getMatches(matchday, season, competizione));
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

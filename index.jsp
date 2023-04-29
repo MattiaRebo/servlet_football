@@ -10,7 +10,7 @@
     <title>Visualizzazione</title>
 
     <!-- Import CSS file -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/style.css">
+    <link rel="stylesheet" href="./styles/style.css">
 
     <!-- Import JQUERY -->
     <script
@@ -123,7 +123,7 @@
         $("#dropdown_season").on('change', function (){
             var match = document.getElementById("dropdown_matchday").value;
             var season = document.getElementById("dropdown_season").value;
-            var link = "http://localhost:8080/servlet_football/match?matchday="+match+"&season="+season;
+            var link = "http://localhost:8080/servlet_football/match?matchday="+match+"&season="+season+"&competition=${competition}";
 
             document.open(link, "_self", "get");
         });
@@ -131,7 +131,7 @@
         $("#dropdown_matchday").on('change', function (){
             var match = document.getElementById("dropdown_matchday").value;
             var season = document.getElementById("dropdown_season").value;
-            var link = "http://localhost:8080/servlet_football/match?matchday="+match+"&season="+season;
+            var link = "http://localhost:8080/servlet_football/match?matchday="+match+"&season="+season+"&competition=${competition}";
 
             document.open(link, "_self", "get");
         });

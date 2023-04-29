@@ -1,19 +1,20 @@
-body{
-    background-color: #f8f8f8;
-}
 
 :root{
     --rounded-corner: 0.25rem;
 }
 
-*, .body {
+*, .body, .container {
     background-color: #f8f8f8;
 }
 
-.competition, .competition div, .competition img{
+.competition, .competition div, .competition img {
     background-color: white;
-
 }
+
+.link-none, .link-none:hover{
+    color:unset;
+}
+
 .competition{
     display: block;
     top: 0px;
