@@ -1,6 +1,7 @@
-
+@import url('https://fonts.cdnfonts.com/css/monument-extended');
 :root{
     --rounded-corner: 0.25rem;
+    --title-blue: #18187c;
 }
 
 *, .body, .container {
@@ -13,34 +14,47 @@
 
 .link-none, .link-none:hover{
     color:unset;
+    text-decoration: none;
+}
+
+#title{
+    color: var(--title-blue);
+    font-family: 'Monument Extended';
+    text-transform: uppercase;
+    font-size: 2.3rem;
+    margin-top: 50px;
 }
 
 .competition{
     display: block;
     top: 0px;
     position: relative;
-    max-width: 262px;
+    width: 345px;
     background-color: white;
-    border-radius: 4px;
+    border-radius: 5px;
     padding: 1.7rem 1.4rem;
     margin: 0.7rem;
     text-decoration: none;
     z-index: 0;
     overflow: hidden;
-    border: 1px solid #f2f8f9;
+    border: 1px solid #d9d6d6;
 }
 
 /*COMPETIZIONE text*/
 .comptext{
     font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, serif;
     color: #6d6a7f;
+    font-size: 1.2rem;
     font-weight: bold;
 }
+
 
 /*Categoria del testo dentro il div, es Serie A*/
 .catext{
     font-weight: bold;
+    font-size: 1.4rem;
 }
+
 
 .competition:hover {
     transition: all 0.2s ease-out;
@@ -49,9 +63,9 @@
     background-color: white;
     left: -3px;
     border-radius: var(--rounded-corner);
-    border: 2px solid;
-    border-color: #817f7f;
+    border: 2px solid #817f7f;
     cursor: pointer;
+    font-size: 1.5rem;
  }
 
 .competition:before {
