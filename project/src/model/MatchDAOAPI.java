@@ -48,8 +48,8 @@ public class MatchDAOAPI {
 
             int awayTeamID = Object.getJSONObject("awayTeam").getInt("id");
             int homeTeamID = Object.getJSONObject("homeTeam").getInt("id");
-            String awayTeam = Object.getJSONObject("awayTeam").getString("name");
-            String homeTeam = Object.getJSONObject("homeTeam").getString("name");
+            String awayTeam = Object.getJSONObject("awayTeam").getString("shortName");
+            String homeTeam = Object.getJSONObject("homeTeam").getString("shortName");
             String awayTeamCrest = Object.getJSONObject("awayTeam").getString("crest");
             String homeTeamCrest = Object.getJSONObject("homeTeam").getString("crest");
             String date = Object.getString("utcDate");
@@ -63,8 +63,8 @@ public class MatchDAOAPI {
 
             switch (status) {
                 case "FINISHED" -> status = "FINITA";
-                case "IN_PLAY" -> status = "IN GIOCO";
-                case "PAUSED" -> status = "IN PAUSA";
+                case "IN_PLAY" -> status = "RISULTATO IN DIRETTA";
+                case "PAUSED" -> status = "FINE 1° TEMPO";
                 case "TIMED", "SCHEDULED" -> status = "DA GIOCARE";
                 case "POSTPONED" -> status = "POSTICIPATA";
                 case "CANCELLED" -> status = "CANCELLATA";

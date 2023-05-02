@@ -10,7 +10,7 @@
     <title>Visualizzazione</title>
 
     <!-- Import CSS file -->
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="styles/style.css">
 
     <!-- Import JQUERY -->
     <script
@@ -32,7 +32,7 @@
                     <div class="col-2 align-bottom">
                         <div>Giornata</div>
                         <select class="form-select form-select-sm w-auto" id="dropdown_matchday" name="dropdown_matchday" aria-label=".form-select-sm example">
-                            <option value="38"><a href="http://localhost:8080/servlet_football/match">38a giornata</a></option>
+                            <option value="38">38a giornata</option>
                             <option value="37">37a giornata</option>
                             <option value="36">36a giornata</option>
                             <option value="35">35a giornata</option>

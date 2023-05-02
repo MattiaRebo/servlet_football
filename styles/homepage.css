@@ -1,7 +1,10 @@
+@import url('https://fonts.cdnfonts.com/css/switzer');
 @import url('https://fonts.cdnfonts.com/css/monument-extended');
+
 :root{
     --rounded-corner: 0.25rem;
-    --title-blue: #18187c;
+    --title-blue-2: #113057;
+    --title-blue-1: #2121bb;
 }
 
 *, .body, .container {
@@ -19,9 +22,10 @@
 
 #title{
     color: var(--title-blue);
-    font-family: 'Monument Extended';
+    font-family: Switzer, serif;
     text-transform: uppercase;
-    font-size: 2.3rem;
+    font-size: 2rem;
+    font-weight: bold;
     margin-top: 50px;
 }
 
@@ -59,11 +63,11 @@
 .competition:hover {
     transition: all 0.2s ease-out;
     box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
-    top: -4px;
+    top: -10px;
     background-color: white;
-    left: -3px;
     border-radius: var(--rounded-corner);
-    border: 2px solid #817f7f;
+    border: 3px solid #6d6a7f;
+    /*border: 3px solid var(--title-blue);*/
     cursor: pointer;
     font-size: 1.5rem;
  }

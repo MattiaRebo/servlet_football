@@ -11,10 +11,69 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </head>
-<body>
-    <div class="row" style="background-color:#f8f8f8">
-        <div class="text-center col-12" id="title"><b>Competizioni in evidenza</b></div>
-        <div class="d-flex justify-content-evenly">
+<body style="background-color: #f8f8f8">
+    <div class="m-15">
+        <div class="col-12 text-center" id="title">Competizioni in evidenza</div>
+        <div class="d-flex justify-content-around pt-3">
+            <a href="http://localhost:8080/servlet_football/match?matchday=31&season=2022&competition=SA" class="link-none">
+                <div class="competition">
+                    <div class="m-2 justify-content-center">
+                        <div class="d-flex align-middle">
+                            <img src="https://oneftbl-cms.imgix.net/https%3A%2F%2Fimages.onefootball.com%2Ficons%2FleagueColoredCompetition%2F128%2F13.png?auto=format%2Ccompress&crop=faces&dpr=2&fit=crop&h=0&q=25&w=48&s=dadee12f2bb8d404d7e58f10fc2d8817" height="75" width="75">
+                            <div class="d-block ms-3 align-middle">
+                                <div class="align-middle comptext">COMPETIZIONE</div>
+                                <div class="align-middle catext">Serie A</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="http://localhost:8080/servlet_football/match?matchday=31&season=2022&competition=PL" class="link-none">
+                <div class="competition col">
+                    <div class="m-2 justify-content-center">
+                        <div class="d-flex align-middle">
+                            <img src="https://oneftbl-cms.imgix.net/https%3A%2F%2Fimages.onefootball.com%2Ficons%2FleagueColoredCompetition%2F128%2F9.png?auto=format%2Ccompress&crop=faces&dpr=2&fit=crop&h=0&q=25&w=48&s=d9f204c9bd3ec998bbeb7eeaac47b710" height="75" width="75">
+                            <div class="d-block ms-3">
+                                <div class="align-middle comptext">COMPETIZIONE</div>
+                                <div class="align-middle catext">Premier League</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="http://localhost:8080/servlet_football/match?matchday=31&season=2022&competition=FL1" class="link-none">
+                <div class="competition">
+                    <div class="m-2 justify-content-center">
+                        <div class="d-flex align-middle">
+                            <img src=https://oneftbl-cms.imgix.net/https%3A%2F%2Fimages.onefootball.com%2Ficons%2FleagueColoredCompetition%2F128%2F23.png?auto=format%2Ccompress&crop=faces&dpr=2&fit=crop&h=0&q=25&w=48&s=b26f9c761c37650213e1a563fbdbb8ff" class="rounded" height="75" width="75">
+                            <div class="d-block ms-3">
+                                <div class="align-middle comptext">COMPETIZIONE</div>
+                                <div class="align-middle catext">Ligue 1</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="http://localhost:8080/servlet_football/match?matchday=31&season=2022&competition=BL1" class="link-none">
+                <div class="competition">
+                    <div class="m-2 justify-content-center">
+                        <div class="d-flex align-middle">
+                            <img src=https://oneftbl-cms.imgix.net/https%3A%2F%2Fimages.onefootball.com%2Ficons%2FleagueColoredCompetition%2F128%2F1.png?auto=format%2Ccompress&crop=faces&dpr=2&fit=crop&h=0&q=25&w=48&s=51040edbbe59606d90cc109efe59c085" class="rounded" height="75" width="75">
+                            <div class="d-block ms-3">
+                                <div class="align-middle comptext">COMPETIZIONE</div>
+                                <div class="align-middle catext">Bundesliga</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-12 text-center" id="title">Partite del giorno</div>
+        <div class="d-flex justify-content-around pt-3">
             <a href="http://localhost:8080/servlet_football/match?matchday=31&season=2022&competition=SA" class="link-none">
                 <div class="competition">
                     <div class="m-2 justify-content-center">
@@ -72,5 +131,7 @@
             </a>
         </div>
     </div>
+
+
 </body>
 </html>

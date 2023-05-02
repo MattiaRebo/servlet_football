@@ -37,7 +37,7 @@ public class servletMatch extends HttpServlet {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        req.getRequestDispatcher("index.jsp").forward(req, resp);
+        req.getRequestDispatcher("pages\\matches.jsp").forward(req, resp);
 
         //ArrayList<MatchBean> matches = match.getMatches();
 
