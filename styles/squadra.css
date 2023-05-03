@@ -1,0 +1,33 @@
+@import url('https://fonts.cdnfonts.com/css/switzer');
+
+.menu .element{
+    font-size: 1.3rem;
+    font-family: Segoe UI, Serif;
+    font-weight: 500;
+    color: #6d6a7f;
+}
+
+.menu:hover{
+    cursor: pointer;
+}
+
+.title{
+    font-size: 2rem;
+}
+
+.subtitle{
+    font-size: 1.2rem;
+    color: #6d6a7f;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.menu .select{
+    font-size: 1.3rem;
+    font-family: Segoe UI, Serif;
+    font-weight: 500;
+    color: black;
+    border-bottom:2px solid black;
+    padding-bottom:2px;
+}
