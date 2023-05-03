@@ -40,8 +40,6 @@ public class servletMatch extends HttpServlet {
         req.getRequestDispatcher("pages\\matches.jsp").forward(req, resp);
 
         //ArrayList<MatchBean> matches = match.getMatches();
-
-
     }
 
     @Override

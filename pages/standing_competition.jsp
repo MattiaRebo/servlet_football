@@ -1,3 +1,6 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,14 +33,24 @@
             <div class="col-9">
                 <div class="col-9 align-middle" style="line-height: 1.5;vertical-align: middle">
                     <p style="margin-top:6%"><a class="subtitle">Competizione</a><br>
-                        <b class="title">Serie A</b></p>
+                        <b class="title">${classifica.competition}</b>
+                    </p>
                 </div>
                 <div class="row align-left text-center menu">
-                    <div class="col-2 select">Informazioni</div>
-                    <div class="col-2 element">Partite</div>
-                    <div class="col-2 element">Classifica</div>
+                    <div class="col-2 disable"><a href="">Informazioni</a></div>
+                    <div class="col-2 element"><a href="http://localhost:8080/servlet_football/match?matchday=${classifica.currentMatchday}&season=${classifica.season}&competition=${classifica.competition}">Partite</a></div>
+                    <div class="col-2 element"><a href="http://localhost:8080/servlet_football/standing?season=${classifica.season}&competition=${classifica.competition}">Classifica</a></div>
                 </div>
             </div>
+        </div>
+
+        <div class="mt-5">
+            <p><b>Nazione: </b>${classifica.area}</p>
+            <p><b>Nome della competizione: </b>${classifica.competition}</p>
+            <p><b>Giornata di campionato corrente: </b>${classifica.currentMatchday}</p>
+            <p><b>Stagione: </b>${classifica.year}</p>
+            <p><b>Data di inizio: </b>${classifica.startDate}</p>
+            <p><b>Data fine: </b>${classifica.endDate}</p>
         </div>
     </div>
 </body>

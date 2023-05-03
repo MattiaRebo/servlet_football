@@ -23,6 +23,26 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <img src="https://1000marche.net/wp-content/uploads/2020/03/Italian-Serie-A-Logo.png" style="border-radius: 50%; height: 100%; width: 100%">
+            </div>
+            <div class="col-9">
+                <div class="col-9 align-middle" style="line-height: 1.5;vertical-align: middle">
+                    <p style="margin-top:6%"><a class="subtitle">Competizione</a><br>
+                        <b class="title">Serie A</b>
+                    </p>
+                </div>
+                <div class="row align-left text-center menu">
+                    <div class="col-2 element"><a href="">Informazioni</a></div>
+                    <div class="col-2 disable"><a href="">Partite</a></div>
+                    <div class="col-2 element"><a href="">Classifica</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="m-5">
         <div class="row g-2 align-middle">
             <div class="col-7 text-center" id="title">
@@ -136,14 +156,4 @@
             document.open(link, "_self", "get");
         });
     });
-
-
 </script>
-
-
-
-
-<!-- url request saved 
-    - /v4/competitions/SA/matches?matchday=31: competizioni serie A 31esima giornata
-
--->

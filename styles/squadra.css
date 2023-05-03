@@ -1,9 +1,10 @@
 @import url('https://fonts.cdnfonts.com/css/switzer');
 
-.menu .element{
+.menu .element a{
     font-size: 1.3rem;
     font-family: Segoe UI, Serif;
     font-weight: 500;
+    text-decoration: none;
     color: #6d6a7f;
 }
 
@@ -22,12 +23,14 @@
     text-decoration: none;
     font-weight: 500;
 }
-
-.menu .select{
+.menu .disable{
+    border-bottom:2px solid black;
+    padding-bottom:2px;
+}
+.menu .disable a{
     font-size: 1.3rem;
+    text-decoration: none;
     font-family: Segoe UI, Serif;
     font-weight: 500;
     color: black;
-    border-bottom:2px solid black;
-    padding-bottom:2px;
 }

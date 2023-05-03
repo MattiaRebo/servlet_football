@@ -89,3 +89,23 @@
 .competition:hover:before {
     transform: scale(2.15);
  }
+
+
+.match {
+    display: block;
+    top: 0px;
+    position: relative;
+    width: 345px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1.7rem 1.4rem;
+    margin: 0.7rem;
+    text-decoration: none;
+    z-index: 0;
+    overflow: hidden;
+    border: 1px solid #d9d6d6;
+}
+
+.match div, img{
+    background-color: white;
+}

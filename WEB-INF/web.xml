@@ -8,4 +8,12 @@
         <servlet-name>RoundMatch</servlet-name>
         <url-pattern>/match</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>Standing</servlet-name>
+        <servlet-class>servlet.servletClassifica</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Standing</servlet-name>
+        <url-pattern>/standing</url-pattern>
+    </servlet-mapping>
 </web-app>
