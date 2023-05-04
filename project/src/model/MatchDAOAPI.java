@@ -29,6 +29,50 @@ public class MatchDAOAPI {
 
     }
 
+    public ArrayList<MatchBean> getCurrentMatches() throws IOException, InterruptedException {
+        String stringRequest = "https://api.football-data.org/v4/matches?competitions=SA,PL,FL1,BL1";
+        HttpRequest request = requestAPI(stringRequest);
+        //response
+        HttpResponse<String> response = response(request);
+        //response in json object
+        JSONObject json = new JSONObject(response.body());
+
+        JSONArray matchesJSON = json.getJSONArray("matches");
+        ArrayList<MatchBean> matches = new ArrayList<>();
+
+        for (int i = 0; i < matchesJSON.length(); i++){
+            JSONObject Object = matchesJSON.getJSONObject(i);
+            int matchID = Object.getInt("id");
+            String competition = Object.getJSONObject("competition").getString("name");
+            int awayTeamID = Object.getJSONObject("awayTeam").getInt("id");
+            int homeTeamID = Object.getJSONObject("homeTeam").getInt("id");
+            String awayTeam = Object.getJSONObject("awayTeam").getString("shortName");
+            String homeTeam = Object.getJSONObject("homeTeam").getString("shortName");
+            String awayTeamCrest = Object.getJSONObject("awayTeam").getString("crest");
+            String homeTeamCrest = Object.getJSONObject("homeTeam").getString("crest");
+            String date = Object.getString("utcDate");
+            String status = Object.getString("status");
+            int awayScore = 0;
+            int homeScore = 0;
+            if(Objects.equals(status, "FINISHED") || Objects.equals(status, "IN_PLAY") || Objects.equals(status, "PAUSED")){
+                awayScore = Object.getJSONObject("score").getJSONObject("fullTime").getInt("away");
+                homeScore = Object.getJSONObject("score").getJSONObject("fullTime").getInt("home");
+            }
+
+            switch (status) {
+                case "FINISHED" -> status = "FINITA";
+                case "IN_PLAY" -> status = "RISULTATO IN DIRETTA";
+                case "PAUSED" -> status = "FINE 1° TEMPO";
+                case "TIMED", "SCHEDULED" -> status = "DA GIOCARE";
+                case "POSTPONED" -> status = "POSTICIPATA";
+                case "CANCELLED" -> status = "CANCELLATA";
+            }
+            MatchBean match = new MatchBean(matchID, date, homeTeamID, awayTeamID, homeTeam, awayTeam, homeScore, awayScore, homeTeamCrest, awayTeamCrest, status, competition);
+            matches.add(match);
+        }
+        return matches;
+    }
+
     public ArrayList<MatchBean> getMatches(int matchday, int season, String comp) throws IOException, InterruptedException {
         String stringRequest = "https://api.football-data.org/v4/competitions/"+comp+"/matches?matchday="+matchday+"&season="+season;
         //request

@@ -1,3 +1,10 @@
+<%@ page import="model.CompetitionBean" %>
+<jsp:useBean id="comp" scope="request" type="model.CompetitionBean"/>
+
+<%
+    request.setAttribute("competitions", comp.getCompetition());
+    request.setAttribute("emblem", comp.getEmblem());
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -10,7 +17,7 @@
     <title>Classifica</title>
     <!-- Import CSS file -->
 
-    <link rel="stylesheet" href="/styles/squadra.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/competition.css">
 
     <!-- Import JQUERY -->
     <script
@@ -25,32 +32,32 @@
 </head>
 <body>
     <!-- Navbar -->
-    <div class="container">
+    <div class="container pt-3">
         <div class="row">
             <div class="col-3">
-                <img src="https://1000marche.net/wp-content/uploads/2020/03/Italian-Serie-A-Logo.png" style="border-radius: 50%; height: 100%; width: 100%">
+                <img src="${comp.emblem}" style="height: 80%; width: 80%">
             </div>
             <div class="col-9">
                 <div class="col-9 align-middle" style="line-height: 1.5;vertical-align: middle">
                     <p style="margin-top:6%"><a class="subtitle">Competizione</a><br>
-                        <b class="title">${classifica.competition}</b>
+                        <b class="title">${comp.competition}</b>
                     </p>
                 </div>
                 <div class="row align-left text-center menu">
                     <div class="col-2 disable"><a href="">Informazioni</a></div>
-                    <div class="col-2 element"><a href="http://localhost:8080/servlet_football/match?matchday=${classifica.currentMatchday}&season=${classifica.season}&competition=${classifica.competition}">Partite</a></div>
-                    <div class="col-2 element"><a href="http://localhost:8080/servlet_football/standing?season=${classifica.season}&competition=${classifica.competition}">Classifica</a></div>
+                    <div class="col-2 element"><a href="http://localhost:8080/servlet_football/match?matchday=${comp.currentMatchday}&season=${comp.year}&competition=${comp.competitioncode}&competitions=${comp.competition}&emblem=${comp.emblem}">Partite</a></div>
+                    <div class="col-2 element"><a href="http://localhost:8080/servlet_football/standing?season=${comp.year}&competition=${comp.competition}">Classifica</a></div>
                 </div>
             </div>
         </div>
 
         <div class="mt-5">
-            <p><b>Nazione: </b>${classifica.area}</p>
-            <p><b>Nome della competizione: </b>${classifica.competition}</p>
-            <p><b>Giornata di campionato corrente: </b>${classifica.currentMatchday}</p>
-            <p><b>Stagione: </b>${classifica.year}</p>
-            <p><b>Data di inizio: </b>${classifica.startDate}</p>
-            <p><b>Data fine: </b>${classifica.endDate}</p>
+            <p><b>Nazione: </b>${comp.area}</p>
+            <p><b>Nome della competizione: </b>${comp.competition}</p>
+            <p><b>Giornata di campionato corrente: </b>${comp.currentMatchday}</p>
+            <p><b>Stagione: </b>${comp.year}</p>
+            <p><b>Data di inizio: </b>${comp.startDate}</p>
+            <p><b>Data fine: </b>${comp.endDate}</p>
         </div>
     </div>
 </body>

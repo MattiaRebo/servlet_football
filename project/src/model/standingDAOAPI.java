@@ -1,4 +1,4 @@
-package model;
+/*package model;
 
 
 import org.json.JSONArray;
@@ -73,4 +73,4 @@ public class standingDAOAPI {
         }
         return squadre;
     }
-}
+}*/

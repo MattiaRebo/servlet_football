@@ -10,7 +10,8 @@
     <title>Visualizzazione</title>
 
     <!-- Import CSS file -->
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/competition.css">
 
     <!-- Import JQUERY -->
     <script
@@ -26,24 +27,24 @@
     <div class="container">
         <div class="row">
             <div class="col-3">
-                <img src="https://1000marche.net/wp-content/uploads/2020/03/Italian-Serie-A-Logo.png" style="border-radius: 50%; height: 100%; width: 100%">
+                <img src="${emblem}" style="height: 80%; width: 80%">
             </div>
             <div class="col-9">
                 <div class="col-9 align-middle" style="line-height: 1.5;vertical-align: middle">
-                    <p style="margin-top:6%"><a class="subtitle">Competizione</a><br>
-                        <b class="title">Serie A</b>
+                    <p style="margin-top:6%; color: #113057"><a class="subtitle">Competizione</a><br>
+                        <b class="title">${comp}</b>
                     </p>
                 </div>
                 <div class="row align-left text-center menu">
-                    <div class="col-2 element"><a href="">Informazioni</a></div>
+                    <div class="col-2 element"><a href="http://localhost:8080/servlet_football/competition?competition=${competizione}">Informazioni</a></div>
                     <div class="col-2 disable"><a href="">Partite</a></div>
-                    <div class="col-2 element"><a href="">Classifica</a></div>
+                    <div class="col-2 element"><a href="http://localhost:8080/servlet_football/standing?season=2022&competition=${competizione}">Classifica</a></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="m-5">
+    <div class="ms-5 me-5">
         <div class="row g-2 align-middle">
             <div class="col-7 text-center" id="title">
                 Calendario e risultati
@@ -143,7 +144,7 @@
         $("#dropdown_season").on('change', function (){
             var match = document.getElementById("dropdown_matchday").value;
             var season = document.getElementById("dropdown_season").value;
-            var link = "http://localhost:8080/servlet_football/match?matchday="+match+"&season="+season+"&competition=${competition}";
+            var link = "http://localhost:8080/servlet_football/match?matchday="+match+"&season="+season+"&competition=${competizione}&competitions=${comp}&emblem=${emblem}";
 
             document.open(link, "_self", "get");
         });
@@ -151,7 +152,7 @@
         $("#dropdown_matchday").on('change', function (){
             var match = document.getElementById("dropdown_matchday").value;
             var season = document.getElementById("dropdown_season").value;
-            var link = "http://localhost:8080/servlet_football/match?matchday="+match+"&season="+season+"&competition=${competition}";
+            var link = "http://localhost:8080/servlet_football/match?matchday="+match+"&season="+season+"&competition=${competizione}&competitions=${comp}&emblem=${emblem}";
 
             document.open(link, "_self", "get");
         });

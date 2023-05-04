@@ -24,13 +24,13 @@
     font-weight: 500;
 }
 .menu .disable{
-    border-bottom:2px solid black;
+    border-bottom:3px solid black;
     padding-bottom:2px;
 }
 .menu .disable a{
+    font-weight: 700;
     font-size: 1.3rem;
     text-decoration: none;
     font-family: Segoe UI, Serif;
-    font-weight: 500;
     color: black;
 }

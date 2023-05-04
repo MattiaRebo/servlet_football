@@ -15,7 +15,7 @@
     <div class="m-15">
         <div class="col-12 text-center" id="title">Competizioni in evidenza</div>
         <div class="d-flex justify-content-around pt-3">
-            <a href="http://localhost:8080/servlet_football/match?matchday=31&season=2022&competition=SA" class="link-none">
+            <a href="http://localhost:8080/servlet_football/competition?competition=SA" class="link-none">
                 <div class="competition">
                     <div class="m-2 justify-content-center">
                         <div class="d-flex align-middle">
@@ -29,7 +29,7 @@
                 </div>
             </a>
 
-            <a href="http://localhost:8080/servlet_football/match?matchday=31&season=2022&competition=PL" class="link-none">
+            <a href="http://localhost:8080/servlet_football/competition?competition=PL" class="link-none">
                 <div class="competition col">
                     <div class="m-2 justify-content-center">
                         <div class="d-flex align-middle">
@@ -43,7 +43,7 @@
                 </div>
             </a>
 
-            <a href="http://localhost:8080/servlet_football/match?matchday=31&season=2022&competition=FL1" class="link-none">
+            <a href="http://localhost:8080/servlet_football/competition?competition=FL1" class="link-none">
                 <div class="competition">
                     <div class="m-2 justify-content-center">
                         <div class="d-flex align-middle">
@@ -57,7 +57,7 @@
                 </div>
             </a>
 
-            <a href="http://localhost:8080/servlet_football/match?matchday=31&season=2022&competition=BL1" class="link-none">
+            <a href="http://localhost:8080/servlet_football/competition?competition=BL1" class="link-none">
                 <div class="competition">
                     <div class="m-2 justify-content-center">
                         <div class="d-flex align-middle">

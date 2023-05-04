@@ -1,5 +1,6 @@
 package servlet;
 
+import model.CompetitionBean;
 import model.MatchBean;
 import model.MatchDAOAPI;
 
@@ -18,6 +19,10 @@ public class servletMatch extends HttpServlet {
         int season = 2022;
         String competizione = "SA";
 
+        String competition = req.getParameter("competitions");
+        String emblem = req.getParameter("emblem");
+        System.out.printf("competition: %s\n", competition);
+
         if(req.getParameter("matchday") != null){
             matchday = Integer.parseInt(req.getParameter("matchday"));
         }
@@ -26,20 +31,19 @@ public class servletMatch extends HttpServlet {
         }
         if(req.getParameter("competition") != null){
             competizione = req.getParameter("competition");
-            System.out.println("comp: "+competizione);
         }
         MatchDAOAPI matches = new MatchDAOAPI();
         try {
             req.setAttribute("matchday", matchday);
             req.setAttribute("season", season);
-            req.setAttribute("competition", competizione);
+            req.setAttribute("competizione", competizione);
+            req.setAttribute("comp", competition);
+            req.setAttribute("emblem", emblem);
             req.setAttribute("matches", matches.getMatches(matchday, season, competizione));
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
         req.getRequestDispatcher("pages\\matches.jsp").forward(req, resp);
-
-        //ArrayList<MatchBean> matches = match.getMatches();
     }
 
     @Override

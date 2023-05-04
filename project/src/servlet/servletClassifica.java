@@ -1,4 +1,4 @@
-package servlet;
+/*package servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,7 +15,7 @@ import model.standingsBean;
 public class servletClassifica extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String comp = req.getParameter("comp");
+        String comp = req.getParameter("competition");
         int season = Integer.parseInt(req.getParameter("season"));
 
         standingsBean classifica = new standingsBean();
@@ -26,8 +26,9 @@ public class servletClassifica extends HttpServlet {
 
             req.setAttribute("classifica", classifica);
             req.setAttribute("squadre", squadre);
-            req.setAttribute("comp", comp);
-            req.getRequestDispatcher("pages\\classifica.html").forward(req, resp);
+            req.setAttribute("competition", comp);
+            req.setAttribute("season", season);
+            req.getRequestDispatcher("pages\\competition.jsp").forward(req, resp);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         } catch (ParseException e) {
@@ -36,4 +37,4 @@ public class servletClassifica extends HttpServlet {
 
 
     }
-}
+}*/
