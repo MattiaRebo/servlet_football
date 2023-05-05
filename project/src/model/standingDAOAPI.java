@@ -1,4 +1,4 @@
-/*package model;
+package model;
 
 
 import org.json.JSONArray;
@@ -17,7 +17,7 @@ import java.util.Objects;
 public class standingDAOAPI {
     private static final String API_KEY = "6aa0297c2bf5461eb299dd08f42e859e";
 
-    private HttpRequest requestAPI(String request){
+    private static HttpRequest requestAPI(String request){
 
         return HttpRequest.newBuilder()
                 .uri(URI.create(request))
@@ -26,13 +26,13 @@ public class standingDAOAPI {
                 .build();
     }
 
-    public HttpResponse<String> response(HttpRequest request) throws IOException, InterruptedException {
+    public static HttpResponse<String> response(HttpRequest request) throws IOException, InterruptedException {
         return HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
 
     }
 
-    public ArrayList<SquadraBean> getStanding(int season, String comp, standingsBean standing) throws IOException, InterruptedException, ParseException {
-        String stringRequest = "https://api.football-data.org/v4/competitions/"+comp+"/standings?season="+season;
+    public ArrayList<SquadraBean> getStanding(String comp) throws IOException, InterruptedException, ParseException {
+        String stringRequest = "https://api.football-data.org/v4/competitions/"+comp+"/standings";
         //request
         HttpRequest request = requestAPI(stringRequest);
         //response
@@ -40,21 +40,11 @@ public class standingDAOAPI {
         //response in json object
         JSONObject json = new JSONObject(response.body());
 
-        standing.setCompetition(json.getJSONObject("competition").getString("name"));
-        String stagione = season + "/" + season+1;
-        System.out.println(json.toString(4));
-        standing.setYear(stagione);
-        standing.setEmblem(json.getJSONObject("competition").getString("emblem"));
-        standing.setStartDate(json.getJSONObject("season").getString("startDate"));
-        standing.setEndDate(json.getJSONObject("season").getString("endDate"));
-        standing.setCurrentMatchday(json.getJSONObject("season").getInt("currentMatchday"));
-        standing.setArea(json.getJSONObject("area").getString("name"));
-
-        JSONArray classifica = json.getJSONArray("standings").getJSONObject(1).getJSONArray("table");
+        JSONArray table = json.getJSONArray("standings").getJSONObject(0).getJSONArray("table");
         ArrayList<SquadraBean> squadre = new ArrayList<>();
 
-        for (int i = 0; i < classifica.length(); i++){
-            JSONObject Object = classifica.getJSONObject(i);
+        for (int i = 0; i < table.length(); i++){
+            JSONObject Object = table.getJSONObject(i);
 
             int position = Object.getInt("position");
             String name = Object.getJSONObject("team").getString("shortName");
@@ -73,4 +63,4 @@ public class standingDAOAPI {
         }
         return squadre;
     }
-}*/
+}

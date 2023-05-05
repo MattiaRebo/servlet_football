@@ -37,8 +37,8 @@
                 </div>
                 <div class="row align-left text-center menu">
                     <div class="col-2 element"><a href="http://localhost:8080/servlet_football/competition?competition=${competizione}">Informazioni</a></div>
-                    <div class="col-2 disable"><a href="">Partite</a></div>
-                    <div class="col-2 element"><a href="http://localhost:8080/servlet_football/standing?season=2022&competition=${competizione}">Classifica</a></div>
+                    <div class="col-2 disable"><a href="http://localhost:8080/servlet_football/match?matchday=${currentMatchday}&season=${year}&competitioncode=${competitioncode}&competitions=${competition}&emblem=${emblem}">Partite</a></div>
+                    <div class="col-2 element"><a href="http://localhost:8080/servlet_football/standing?matchday=${matchday}&season=${season}&competitioncode=${competitioncode}&competitions=${competition}&emblem=${emblem}">Classifica</a></div>
                 </div>
             </div>
         </div>

@@ -1,10 +1,3 @@
-<%@ page import="model.CompetitionBean" %>
-<jsp:useBean id="comp" scope="request" type="model.CompetitionBean"/>
-
-<%
-    request.setAttribute("competitions", comp.getCompetition());
-    request.setAttribute("emblem", comp.getEmblem());
-%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -45,8 +38,8 @@
                 </div>
                 <div class="row align-left text-center menu">
                     <div class="col-2 disable"><a href="">Informazioni</a></div>
-                    <div class="col-2 element"><a href="http://localhost:8080/servlet_football/match?matchday=${comp.currentMatchday}&season=${comp.year}&competition=${comp.competitioncode}&competitions=${comp.competition}&emblem=${comp.emblem}">Partite</a></div>
-                    <div class="col-2 element"><a href="http://localhost:8080/servlet_football/standing?season=${comp.year}&competition=${comp.competition}">Classifica</a></div>
+                    <div class="col-2 element"><a href="http://localhost:8080/servlet_football/match?matchday=${comp.currentMatchday}&season=${comp.year}&competitioncode=${comp.competitioncode}&competitions=${comp.competition}&emblem=${comp.emblem}">Partite</a></div>
+                    <div class="col-2 element"><a href="http://localhost:8080/servlet_football/standing?matchday=${comp.currentMatchday}&season=${comp.year}&competitioncode=${comp.competitioncode}&competitions=${comp.competition}&emblem=${comp.emblem}">Classifica</a></div>
                 </div>
             </div>
         </div>

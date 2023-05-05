@@ -9,8 +9,12 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Objects;
+import java.util.TimeZone;
 
 public class MatchDAOAPI {
     private static final String API_KEY = "6aa0297c2bf5461eb299dd08f42e859e";
@@ -27,6 +31,31 @@ public class MatchDAOAPI {
     public HttpResponse<String> response(HttpRequest request) throws IOException, InterruptedException {
         return HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
 
+    }
+
+    public String utcT0gtm(String inputDate){
+        // Definisci il formato della data di input
+        SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        // Imposta il fuso orario di input su UTC
+        inputFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+
+        // Definisci il formato della data di output
+        SimpleDateFormat outputFormat = new SimpleDateFormat("dd-MM-yyyy' 'HH:mm:ss");
+        // Imposta il fuso orario di output su GMT+2
+        outputFormat.setTimeZone(TimeZone.getTimeZone("GMT+2"));
+
+        // Data di input in formato UTC
+        // Parsa la data di input
+        Date date = null;
+        try {
+            date = inputFormat.parse(inputDate);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        // Formatta la data di output in GMT+2
+        String outputDate = outputFormat.format(date);
+
+        return outputDate;
     }
 
     public ArrayList<MatchBean> getCurrentMatches() throws IOException, InterruptedException {
@@ -50,7 +79,7 @@ public class MatchDAOAPI {
             String homeTeam = Object.getJSONObject("homeTeam").getString("shortName");
             String awayTeamCrest = Object.getJSONObject("awayTeam").getString("crest");
             String homeTeamCrest = Object.getJSONObject("homeTeam").getString("crest");
-            String date = Object.getString("utcDate");
+            String date = utcT0gtm(Object.getString("utcDate")).substring(11,16);
             String status = Object.getString("status");
             int awayScore = 0;
             int homeScore = 0;
@@ -96,7 +125,7 @@ public class MatchDAOAPI {
             String homeTeam = Object.getJSONObject("homeTeam").getString("shortName");
             String awayTeamCrest = Object.getJSONObject("awayTeam").getString("crest");
             String homeTeamCrest = Object.getJSONObject("homeTeam").getString("crest");
-            String date = Object.getString("utcDate");
+            String date = utcT0gtm(Object.getString("utcDate"));
             String status = Object.getString("status");
             int awayScore = 0;
             int homeScore = 0;

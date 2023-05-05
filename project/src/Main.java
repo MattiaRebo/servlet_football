@@ -1,6 +1,4 @@
-import model.MatchBean;
-import model.MatchDAOAPI;
-import model.standingsBean;
+import model.*;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -11,12 +9,13 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException, ParseException {
-        String dateInString = "2023-05-05T18:30:00Z";
-        String DATE_FORMAT = "dd-M-yyyy hh:mm:ss a";
-        LocalDateTime ldt = LocalDateTime.parse(dateInString, DateTimeFormatter.ofPattern(DATE_FORMAT));
 
-        ZoneId singaporeZoneId = ZoneId.of("Asia/Singapore");
-        System.out.println("TimeZone : " + singaporeZoneId);
+        /*standingDAOAPI standingsDAO = new standingDAOAPI();
+        standingsBean classifica = new standingsBean(standingDAOAPI.getStanding("SA"));
 
+        for (int i = 0; i < classifica.getClassifica().size(); i++){
+            System.out.println(classifica.getClassifica().get(i).getName() + " - " + classifica.getClassifica().get(i).getPosition() + " - " + classifica.getClassifica().get(i).getPoint());
+        }
+*/
     }
 }

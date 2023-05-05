@@ -33,6 +33,14 @@ public class MatchBean {
         this.status = status;
     }
 
+    public String getCompetition() {
+        return competition;
+    }
+
+    public void setCompetition(String competition) {
+        this.competition = competition;
+    }
+
     public MatchBean(int id, String date, int IDhomeTeam, int IDawayTeam, String homeTeam, String awayTeam, int homeScore, int awayScore, String homeTeamCrest, String awayTeamCrest, String status, String competition) {
         this.id = id;
         this.date = date;

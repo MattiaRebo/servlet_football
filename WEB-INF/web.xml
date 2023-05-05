@@ -26,4 +26,13 @@
         <servlet-name>Competition</servlet-name>
         <url-pattern>/competition</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Home</servlet-name>
+        <servlet-class>servlet.servletCurrentMatch</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
 </web-app>

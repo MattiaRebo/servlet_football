@@ -1,4 +1,4 @@
-/*package servlet;
+package servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,26 +15,28 @@ import model.standingsBean;
 public class servletClassifica extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String comp = req.getParameter("competition");
+        String competition = req.getParameter("competitions");
+        String emblem = req.getParameter("emblem");
+        String competitioncode = req.getParameter("competitioncode");
+        int matchday = Integer.parseInt(req.getParameter("matchday"));
         int season = Integer.parseInt(req.getParameter("season"));
 
-        standingsBean classifica = new standingsBean();
-        standingDAOAPI dao = new standingDAOAPI();
+        standingDAOAPI standingDAO = new standingDAOAPI();
 
         try {
-            ArrayList<SquadraBean> squadre = dao.getStanding(season, comp, classifica);
+            standingsBean classifica = new standingsBean(standingDAO.getStanding(competitioncode));
 
-            req.setAttribute("classifica", classifica);
-            req.setAttribute("squadre", squadre);
-            req.setAttribute("competition", comp);
+            req.setAttribute("matchday", matchday);
             req.setAttribute("season", season);
-            req.getRequestDispatcher("pages\\competition.jsp").forward(req, resp);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        } catch (ParseException e) {
+            req.setAttribute("competitioncode", competitioncode);
+            req.setAttribute("comp", competition);
+            req.setAttribute("emblem", emblem);
+            req.setAttribute("classifica", classifica.getClassifica());
+
+        } catch (InterruptedException | ParseException e) {
             throw new RuntimeException(e);
         }
 
-
+        req.getRequestDispatcher("pages\\classifica.jsp").forward(req, resp);
     }
-}*/
+}
