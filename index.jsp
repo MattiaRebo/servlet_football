@@ -76,7 +76,7 @@
         </div>
 
         <div class="col-12 text-center" id="title">Partite del giorno</div>
-        <div class="m-5 d-flex justify-content-between row">
+        <div class="m-5 d-flex justify-content-around row">
             <c:forEach items="${matches}" var="match">
                 <div class="col-12 col-md-6 col-xl-4 p-3">
                     <div class="row match">

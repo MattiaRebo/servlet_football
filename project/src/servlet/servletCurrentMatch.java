@@ -7,6 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class servletCurrentMatch extends HttpServlet {
     @Override
@@ -19,6 +21,9 @@ public class servletCurrentMatch extends HttpServlet {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+
+        Collections.sort(matchBeans, Comparator.comparing(MatchBean::getCompetition).reversed());
+
         request.setAttribute("matches", matchBeans);
 
         request.getRequestDispatcher("index.jsp").forward(request, response);

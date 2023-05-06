@@ -6,6 +6,7 @@
     <!-- Import CSS file -->
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/competition.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/classifica.css">
 
     <!-- Import JQUERY -->
     <script
@@ -30,7 +31,7 @@
         <div class="col-9">
             <div class="col-9 align-middle" style="line-height: 1.5;vertical-align: middle">
                 <p style="margin-top:6%"><a class="subtitle">Competizione</a><br>
-                    <b class="title">${comp}</b>
+                    <b class="title">${competitions}</b>
                 </p>
             </div>
             <div class="row align-left text-center menu">
@@ -43,10 +44,10 @@
 
 
 
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-7"></div>
-            <div class="col-3 d-flex justify-content-around">
+    <div class="container">
+        <div class="row d-flex align-items-center header">
+            <div class="col-7 row"></div>
+            <div class="col-5 d-flex justify-content-around" style="font-size: 1.5rem; font-weight: bold">
                 <div class="text-center justify-content-around" style="width: 50px">G</div>
                 <div class="text-center justify-content-around" style="width: 50px">V</div>
                 <div class="text-center justify-content-around" style="width: 50px">N</div>
@@ -57,16 +58,24 @@
         </div>
 
         <c:forEach items="${classifica}" var="squadra">
-            <div class="row">
-                <div class="col-4">${squadra.position} <img src="${squadra.crest}" height="25" width="25">${squadra.name}</div>
-                <div class="col-3"></div>
-                <div class="col-3 d-flex justify-content-around">
+            <div class="row riga d-flex align-items-center">
+                <div class="col-7 squadre row">
+                    <div class="col-2 text-end align-middle">
+                        ${squadra.position}
+                    </div>
+                    <div class="col-5">
+                        <img src="${squadra.crest} "height="25" width="25">
+                        &emsp;${squadra.name}
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <div class="col-5 d-flex justify-content-around" style="font-size: 1.1rem;">
                     <div class="text-center justify-content-around" style="width: 50px">${squadra.matchPlayed}</div>
                     <div class="text-center justify-content-around" style="width: 50px">${squadra.won}</div>
                     <div class="text-center justify-content-around" style="width: 50px">${squadra.goalFor}</div>
                     <div class="text-center justify-content-around" style="width: 50px">${squadra.goalsAgainst}</div>
                     <div class="text-center justify-content-around" style="width: 50px">${squadra.goalsAgainst}</div>
-                    <div class="text-center justify-content-around" style="width: 50px">${squadra.point}</div>
+                    <div class="text-center justify-content-around" style="width: 50px"><b style="font-size: 1.2rem">${squadra.point}</b></div>
                 </div>
             </div>
         </c:forEach>
