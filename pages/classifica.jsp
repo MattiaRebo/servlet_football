@@ -31,13 +31,13 @@
         <div class="col-9">
             <div class="col-9 align-middle" style="line-height: 1.5;vertical-align: middle">
                 <p style="margin-top:6%"><a class="subtitle">Competizione</a><br>
-                    <b class="title">${competitions}</b>
+                    <b class="title">${comp}</b>
                 </p>
             </div>
             <div class="row align-left text-center menu">
                 <div class="col-2 element"><a href="http://localhost:8080/servlet_football/competition?competition=${competitioncode}">Informazioni</a></div>
-                <div class="col-2 element"><a href="http://localhost:8080/servlet_football/match?matchday=${matchday}&season=${season}&competitioncode=${competitioncode}&competitions=${competition}&emblem=${emblem}">Partite</a></div>
-                <div class="col-2 disable"><a href="http://localhost:8080/servlet_football/standing?matchday=${matchday}&season=${season}&competitioncode=${competitioncode}&competitions=${competition}&emblem=${emblem}">Classifica</a></div>
+                <div class="col-2 element"><a href="http://localhost:8080/servlet_football/match?matchday=${matchday}&season=${season}&competitioncode=${competitioncode}&competitions=${comp}&emblem=${emblem}">Partite</a></div>
+                <div class="col-2 disable"><a href="http://localhost:8080/servlet_football/standing?matchday=${matchday}&season=${season}&competitioncode=${competitioncode}&competitions=${comp}&emblem=${emblem}">Classifica</a></div>
             </div>
         </div>
     </div>
