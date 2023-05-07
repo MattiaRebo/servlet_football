@@ -76,7 +76,7 @@
         </div>
 
         <div class="col-12 text-center" id="title">Partite del giorno</div>
-        <div class="m-5 d-flex justify-content-around row">
+        <div class="m-3 d-flex justify-content-around row">
             <c:forEach items="${matches}" var="match">
                 <div class="col-12 col-md-6 col-xl-4 p-3">
                     <div class="row match">
@@ -86,7 +86,7 @@
                                 <div class="col-10 d-flex align-content-center align-middle">
                                     <img src="${match.homeTeamCrest}" style="width: 30px; height: 30px;"> &ensp; <div class="text-center">${match.homeTeam}</div>
                                 </div>
-                                <div class="col-2 text-end">0</div>
+                                <div class="col-2 text-end">${match.homeScore}</div>
                             </div>
                             <div class="col-12 text-center align-content-center align-middle" style="vertical-align: middle">
                                 <c:set var="test" value="${match.status}"/>
@@ -96,7 +96,7 @@
                                 <div class="col-10 d-flex align-content-center align-middle">
                                     <img src="${match.awayTeamCrest}" style="width: 30px; height: 30px;"> &ensp; <div class="text-center">${match.awayTeam}</div>
                                 </div>
-                                <div class="col-2 text-end">0</div>
+                                <div class="col-2 text-end">${match.awayScore}</div>
                             </div>
                         </div>
                     </div>

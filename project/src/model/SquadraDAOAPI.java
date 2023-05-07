@@ -1,6 +1,7 @@
 package model;
 
 
+import dao.SquadraDAO;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -10,11 +11,9 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Objects;
 
-public class standingDAOAPI {
+public class SquadraDAOAPI implements SquadraDAO {
     private static final String API_KEY = "6aa0297c2bf5461eb299dd08f42e859e";
 
     private static HttpRequest requestAPI(String request){

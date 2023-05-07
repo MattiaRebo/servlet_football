@@ -25,18 +25,18 @@
 </head>
 <body>
     <!-- Navbar -->
-    <div class="container pt-3">
+    <div class="container pt-3 ">
         <div class="row">
-            <div class="col-3">
-                <img src="${comp.emblem}" style="height: 80%; width: 80%">
+            <div class="col-12 col-lg-3 d-flex justify-content-center">
+                <img class="img-fluid" src="${comp.emblem}">
             </div>
-            <div class="col-9">
-                <div class="col-9 align-middle" style="line-height: 1.5;vertical-align: middle">
+            <div class="col-12 col-lg-9">
+                <div class="col-12 col-lg-9 align-middle d-flex justify-content-center justify-content-lg-start text-center text-lg-start" style="line-height: 1.5;vertical-align: middle">
                     <p style="margin-top:6%"><a class="subtitle">Competizione</a><br>
                         <b class="title">${comp.competition}</b>
                     </p>
                 </div>
-                <div class="row align-left text-center menu">
+                <div class="row align-left text-center menu d-flex justify-content-center justify-content-lg-start">
                     <div class="col-2 disable"><a href="">Informazioni</a></div>
                     <div class="col-2 element"><a href="http://localhost:8080/servlet_football/match?matchday=${comp.currentMatchday}&season=${comp.year}&competitioncode=${comp.competitioncode}&competitions=${comp.competition}&emblem=${comp.emblem}">Partite</a></div>
                     <div class="col-2 element"><a href="http://localhost:8080/servlet_football/standing?matchday=${comp.currentMatchday}&season=${comp.year}&competitioncode=${comp.competitioncode}&competitions=${comp.competition}&emblem=${comp.emblem}">Classifica</a></div>
@@ -44,13 +44,13 @@
             </div>
         </div>
 
-        <div class="mt-5">
-            <p><b>Nazione: </b>${comp.area}</p>
-            <p><b>Nome della competizione: </b>${comp.competition}</p>
-            <p><b>Giornata di campionato corrente: </b>${comp.currentMatchday}</p>
-            <p><b>Stagione: </b>${comp.year}</p>
-            <p><b>Data di inizio: </b>${comp.startDate}</p>
-            <p><b>Data fine: </b>${comp.endDate}</p>
+        <div class="container text-center pt-5" style="font-size: 1.5rem">
+            <p><b>Nazione: </b><i>${comp.area}</i></p>
+            <p><b>Nome della competizione: </b><i>${comp.competition}</i></p>
+            <p><b>Giornata di campionato corrente: </b><i>${comp.currentMatchday}</i></p>
+            <p><b>Stagione: </b><i>${comp.year}</i></p>
+            <p><b>Data di inizio: </b><i>${comp.startDate}</i></p>
+            <p><b>Data fine: </b><i>${comp.endDate}</i></p>
         </div>
     </div>
 </body>

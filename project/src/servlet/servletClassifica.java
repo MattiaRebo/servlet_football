@@ -6,11 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.ArrayList;
 
-import model.SquadraBean;
-import model.standingDAOAPI;
-import model.standingsBean;
+import model.SquadraDAOAPI;
 
 public class servletClassifica extends HttpServlet {
     @Override
@@ -21,17 +18,15 @@ public class servletClassifica extends HttpServlet {
         int matchday = Integer.parseInt(req.getParameter("matchday"));
         int season = Integer.parseInt(req.getParameter("season"));
 
-        standingDAOAPI standingDAO = new standingDAOAPI();
+        SquadraDAOAPI standingDAO = new SquadraDAOAPI();
 
         try {
-            standingsBean classifica = new standingsBean(standingDAO.getStanding(competitioncode));
-
             req.setAttribute("matchday", matchday);
             req.setAttribute("season", season);
             req.setAttribute("competitioncode", competitioncode);
             req.setAttribute("comp", competition);
             req.setAttribute("emblem", emblem);
-            req.setAttribute("classifica", classifica.getClassifica());
+            req.setAttribute("classifica", standingDAO.getStanding(competitioncode));
 
         } catch (InterruptedException | ParseException e) {
             throw new RuntimeException(e);

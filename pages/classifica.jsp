@@ -25,16 +25,16 @@
 <!-- Navbar -->
 <div class="container">
     <div class="row">
-        <div class="col-3">
-            <img src="${emblem}" style="border-radius: 50%; height: 100%; width: 100%">
+        <div class="col-12 col-lg-3 d-flex justify-content-center">
+            <img class="img-fluid" src="${emblem}">
         </div>
-        <div class="col-9">
-            <div class="col-9 align-middle" style="line-height: 1.5;vertical-align: middle">
-                <p style="margin-top:6%"><a class="subtitle">Competizione</a><br>
+        <div class="col-12 col-lg-9">
+            <div class="col-12 col-lg-9 align-middle d-flex justify-content-center justify-content-lg-start text-center text-lg-start" style="line-height: 1.5;vertical-align: middle">
+                <p style="margin-top:6%; color: #113057"><a class="subtitle">Competizione</a><br>
                     <b class="title">${comp}</b>
                 </p>
             </div>
-            <div class="row align-left text-center menu">
+            <div class="row align-left text-center menu d-flex justify-content-center justify-content-lg-start">
                 <div class="col-2 element"><a href="http://localhost:8080/servlet_football/competition?competition=${competitioncode}">Informazioni</a></div>
                 <div class="col-2 element"><a href="http://localhost:8080/servlet_football/match?matchday=${matchday}&season=${season}&competitioncode=${competitioncode}&competitions=${comp}&emblem=${emblem}">Partite</a></div>
                 <div class="col-2 disable"><a href="http://localhost:8080/servlet_football/standing?matchday=${matchday}&season=${season}&competitioncode=${competitioncode}&competitions=${comp}&emblem=${emblem}">Classifica</a></div>

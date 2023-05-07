@@ -1,6 +1,7 @@
 package model;
 
 
+import dao.MatchDAO;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -16,10 +17,10 @@ import java.util.Date;
 import java.util.Objects;
 import java.util.TimeZone;
 
-public class MatchDAOAPI {
+public class MatchDAOAPI implements MatchDAO {
     private static final String API_KEY = "6aa0297c2bf5461eb299dd08f42e859e";
 
-    private HttpRequest requestAPI(String request){
+    public HttpRequest requestAPI(String request){
 
         return HttpRequest.newBuilder()
                 .uri(URI.create(request))
