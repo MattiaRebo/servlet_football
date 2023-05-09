@@ -1,0 +1,18 @@
+@import url('https://fonts.cdnfonts.com/css/switzer');
+@import url('https://fonts.cdnfonts.com/css/monument-extended');
+
+.title{
+    font-size: 5rem;
+    text-align: center;
+    justify-items: center;
+    vertical-align: center;
+    font-family: Switzer;
+}
+
+.subtitle{
+    font-size: 1.4rem;
+    color: #6d6a7f;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 800;
+}

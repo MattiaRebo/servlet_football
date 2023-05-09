@@ -35,7 +35,7 @@
     position: relative;
     background-color: white;
     border-radius: 5px;
-    padding: 1.7rem 1.4rem;
+    padding: 1.2rem 1rem;
     margin: 0.7rem;
     text-decoration: none;
     z-index: 0;
@@ -79,6 +79,13 @@
     font-weight: bold;
     font-size: 1.6rem;
 }
+
+
+.catextpremier{
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
 
 .team{
     color: var(--title-blue);

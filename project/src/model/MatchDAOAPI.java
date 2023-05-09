@@ -60,7 +60,7 @@ public class MatchDAOAPI implements MatchDAO {
     }
 
     public ArrayList<MatchBean> getCurrentMatches() throws IOException, InterruptedException {
-        String stringRequest = "https://api.football-data.org/v4/matches?competitions=SA,PL,FL1,BL1";
+        String stringRequest = "https://api.football-data.org/v4/matches?competitions=SA,PL,FL1,BL1,CL";
         HttpRequest request = requestAPI(stringRequest);
         //response
         HttpResponse<String> response = response(request);
@@ -126,7 +126,7 @@ public class MatchDAOAPI implements MatchDAO {
             String homeTeam = Object.getJSONObject("homeTeam").getString("shortName");
             String awayTeamCrest = Object.getJSONObject("awayTeam").getString("crest");
             String homeTeamCrest = Object.getJSONObject("homeTeam").getString("crest");
-            String date = utcT0gtm(Object.getString("utcDate"));
+            String date = utcT0gtm(Object.getString("utcDate")).substring(0,16);
             String status = Object.getString("status");
             int awayScore = 0;
             int homeScore = 0;

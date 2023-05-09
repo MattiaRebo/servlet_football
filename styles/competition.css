@@ -1,5 +1,9 @@
 @import url('https://fonts.cdnfonts.com/css/switzer');
 
+*{
+    margin: 1px;
+}
+
 .menu .element a{
     font-size: 1.3rem;
     font-family: Segoe UI, Serif, serif;

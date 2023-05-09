@@ -17,7 +17,7 @@
 <body style="background-color: #f8f8f8">
     <div class="m-3">
         <div class="col-12 text-center" id="title">Competizioni in evidenza</div>
-        <div class="row d-flex justify-content-around m-2">
+        <div class="m-2 d-flex justify-content-around row" style="">
             <a href="http://localhost:8080/servlet_football/competition?competition=SA" class="col-12 col-md-6 col-xl-3 link-none">
                 <div class="competition col-12">
                     <div class="m-2 justify-content-center">
@@ -39,7 +39,7 @@
                             <img class="img-fluid" src="https://oneftbl-cms.imgix.net/https%3A%2F%2Fimages.onefootball.com%2Ficons%2FleagueColoredCompetition%2F128%2F9.png?auto=format%2Ccompress&crop=faces&dpr=2&fit=crop&h=0&q=25&w=48&s=d9f204c9bd3ec998bbeb7eeaac47b710" height="95" width="95">
                             <div class="d-block ms-xl-3 col-7">
                                 <div class="align-middle text-center comptext" style="">COMPETIZIONE</div>
-                                <div class="align-middle text-center catext">Premier League</div>
+                                <div class="align-middle text-center catext" style="line-height:1.1">Premier League</div>
                             </div>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
             </a>
         </div>
 
-        <div class="col-12 text-center" id="title">Partite del giorno</div>
+        <div class="col-12 text-center" id="title">Partite del giorno [${number}]</div>
         <div class="m-3 d-flex justify-content-around row">
             <c:forEach items="${matches}" var="match">
                 <div class="col-12 col-md-6 col-xl-4 p-3">

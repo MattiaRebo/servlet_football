@@ -6,7 +6,7 @@
     --squadre: #1616e8;
     --bs-font-sans-serif: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     --bs-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-} 
+}
 
 #head2head{
     background-color: white;
@@ -34,12 +34,28 @@
     margin-top: 50px;
 }
 
-#squadre {
+#squadre{
     text-decoration: unset;
+    color: black;
     font-size: 1.5rem;
     text-transform: uppercase;
     font-weight: 600;
     font-family: Switzer, serif;
+}
+
+#squadree{
+    text-decoration: unset;
+    color: black;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: Switzer, serif;
+}
+
+#squadre:hover{
+    font-size: 1.7rem;
+    color: #1818af;
+    cursor: pointer;
 }
 
 

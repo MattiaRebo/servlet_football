@@ -3,6 +3,8 @@ package model;
 public class SquadraBean {
     int position;
     String name;
+    String city;
+    String region;
     String crest;
     int matchPlayed;
     int won;
@@ -24,6 +26,27 @@ public class SquadraBean {
         this.point = point;
         this.goalFor = goalFor;
         this.goalsAgainst = goalsAgainst;
+    }
+
+    public SquadraBean(String city, String region) {
+        this.city = city;
+        this.region = region;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
     }
 
     public int getPosition() {

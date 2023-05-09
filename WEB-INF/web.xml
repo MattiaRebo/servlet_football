@@ -35,4 +35,13 @@
         <servlet-name>Home</servlet-name>
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Team</servlet-name>
+        <servlet-class>servlet.servletTeam</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Team</servlet-name>
+        <url-pattern>/team</url-pattern>
+    </servlet-mapping>
 </web-app>

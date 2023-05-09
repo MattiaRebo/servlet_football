@@ -25,6 +25,7 @@ public class servletCurrentMatch extends HttpServlet {
         Collections.sort(matchBeans, Comparator.comparing(MatchBean::getCompetition).reversed());
 
         request.setAttribute("matches", matchBeans);
+        request.setAttribute("number", matchBeans.size());
 
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }

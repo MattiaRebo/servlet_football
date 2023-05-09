@@ -10,8 +10,11 @@
     <title>Visualizzazione</title>
 
     <!-- Import CSS file -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/match.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/competition.css">
+
+    <!-- import fontawesom -->
+    <script src="https://kit.fontawesome.com/b38354e4de.js" crossorigin="anonymous"></script>
 
     <!-- Import JQUERY -->
     <script
@@ -29,16 +32,16 @@
             <div class="col-12 col-lg-3 d-flex justify-content-center">
                 <img class="img-fluid" src="${emblem}">
             </div>
-            <div class="col-12 col-lg-9">
+            <div class="col-12 col-lg-9 row">
                 <div class="col-12 col-lg-9 align-middle d-flex justify-content-center justify-content-lg-start text-center text-lg-start" style="line-height: 1.5;vertical-align: middle">
                     <p style="margin-top:6%; color: #113057"><a class="subtitle">Competizione</a><br>
                         <b class="title">${comp}</b>
                     </p>
                 </div>
                 <div class="row align-left text-center menu d-flex justify-content-center justify-content-lg-start">
-                    <div class="col-2 element"><a href="http://localhost:8080/servlet_football/competition?competition=${competitioncode}">Informazioni</a></div>
-                    <div class="col-2 disable"><a href="http://localhost:8080/servlet_football/match?matchday=${currentMatchday}&season=${year}&competitioncode=${competitioncode}&competitions=${comp}&emblem=${emblem}">Partite</a></div>
-                    <div class="col-2 element"><a href="http://localhost:8080/servlet_football/standing?matchday=${matchday}&season=${season}&competitioncode=${competitioncode}&competitions=${comp}&emblem=${emblem}">Classifica</a></div>
+                    <div class="col-12 col-lg-3 element"><a href="http://localhost:8080:8080/servlet_football/competition?competition=${competitioncode}">Informazioni</a></div>
+                    <div class="col-12 col-lg-3 disable"><a href="http://localhost:8080/servlet_football/match?matchday=${currentMatchday}&season=${year}&competitioncode=${competitioncode}&competitions=${comp}&emblem=${emblem}">Partite</a></div>
+                    <div class="col-12 col-lg-3 element"><a href="http://localhost:8080/servlet_football/standing?matchday=${matchday}&season=${season}&competitioncode=${competitioncode}&competitions=${comp}&emblem=${emblem}">Classifica</a></div>
                 </div>
             </div>
         </div>
@@ -103,26 +106,29 @@
                     </div>
             </div>
         </div>
-        
         <div class="mt-5 pt-1 pb-1 align-items-center" id="head2head">
         <c:forEach items="${matches}" var="match">
-            <div class="row pt-3 pb-3 border-bottom border-top d-flex justify-content-beetween align-items-center align-middle">
+            <div class="row pt-3 pb-3 border-bottom d-flex justify-content-beetween align-items-center align-middle">
                 <div class="col-1 text-left" id="time">
-                    <div>${match.round}<sup>a</sup> GIORNATA</div>
+                    <div>${match.round}<sup>a</sup>giornata</div>
                     <div>${match.date}</div>
                 </div>
-                <div class="col-9 d-flex justify-content-center align-middle" id="squadre">
+                <div class="col-9 d-flex justify-content-center align-middle" id="squadree">
                     <div class="col-4 text-end">
-                            ${match.homeTeam}&ensp;
-                        <img src="${match.homeTeamCrest}" height="25" width="25">
+                        <a class="squadre" href="http://localhost:8080/servlet_football/team?name=${match.homeTeam}&crest=${match.homeTeamCrest}&competitioncode=${competitioncode}" id="squadre">
+                                ${match.homeTeam}</a>&ensp;
+                        <img src="${match.homeTeamCrest}" height="45" width="45">
                         &ensp;&ensp;${match.homeScore}
                     </div>
-                    <div class="col-1 text-center" style="color: #2047e3;">
+                    <div class="col-1 text-center" style="color: #2047e3; font-size: 1.4rem;">
                         VS
                     </div>
-                    <div class="col-4 text-left">
+                    <div class="col-4 text-left squadre" id="squadree">
                             ${match.awayScore}&ensp;&ensp;
-                        <img src="${match.awayTeamCrest}" height="25" width="25">&ensp;${match.awayTeam}
+                        <img src="${match.awayTeamCrest}" height="45" width="45">&ensp;
+                        <a class="squadre" href="http://localhost:8080/servlet_football/team?name=${match.awayTeam}&crest=${match.awayTeamCrest}&competitioncode=${competitioncode}" id="squadre">
+                            ${match.awayTeam}
+                        </a>
                     </div>
                 </div>
                 <div class="col-1 text-end" ID="status">${match.status}</div>
@@ -130,9 +136,15 @@
         </c:forEach>
             <br>
         </div>
+
+        <div class="col-12 d-flex justify-content-center pt-1 pb-4">
+            <a href="http://localhost:8080/servlet_football/home"> <i class="fa-solid fa-circle-arrow-left fa-6x" style="color: #5a5858;"></i></a>
+        </div>
     </div>
 </body>
 </html>
+
+<!-- <a href="http://localhost:8080/servlet_football/team?name=${match.awayTeam}&crest=${match.awayTeamCrest}" style="text-decoration: none; color: black;:hover{color: #1616e8}"> -->
 
 
 <script type="text/javascript">

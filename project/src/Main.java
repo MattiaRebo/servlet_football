@@ -11,14 +11,9 @@ import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException, ParseException {
+        SquadraDAOAPI squadraDAOAPI = new SquadraDAOAPI();
 
-        MatchDAOAPI matchDAOAPI = new MatchDAOAPI();
-        ArrayList<MatchBean> matches = matchDAOAPI.getCurrentMatches();
-
-        Collections.sort(matches, Comparator.comparing(MatchBean::getCompetition).reversed());
-        for (int i = 0; i < matches.size(); i++){
-            System.out.println(matches.get(i).getCompetition());
-        }
-
+        SquadraBean squadra = squadraDAOAPI.getTeam("napoli");
+        System.out.println(squadra.getRegion());
     }
 }
