@@ -7,7 +7,9 @@ public class MatchBean {
     int round;
     int IDhomeTeam;
     String homeTeam;
+    String homeTeamNoSpace;
     String awayTeam;
+    String awayTeamNoSpace;
     int IDawayTeam;
     int homeScore;
     int awayScore;
@@ -54,6 +56,22 @@ public class MatchBean {
         this.awayTeam = awayTeam;
         this.status = status;
         this.competition = competition;
+    }
+
+    public String getHomeTeamNoSpace() {
+        return homeTeamNoSpace;
+    }
+
+    public void setHomeTeamNoSpace(String homeTeamNoSpace) {
+        this.homeTeamNoSpace = homeTeamNoSpace;
+    }
+
+    public String getAwayTeamNoSpace() {
+        return awayTeamNoSpace;
+    }
+
+    public void setAwayTeamNoSpace(String awayTeamNoSpace) {
+        this.awayTeamNoSpace = awayTeamNoSpace;
     }
 
     public String getStatus() {

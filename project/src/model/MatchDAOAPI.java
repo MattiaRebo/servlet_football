@@ -146,6 +146,8 @@ public class MatchDAOAPI implements MatchDAO {
 
 
             MatchBean match = new MatchBean(matchID, date, season, matchday, homeTeamID, awayTeamID, homeTeam, awayTeam, homeScore, awayScore, homeTeamCrest, awayTeamCrest, status);
+            match.setAwayTeamNoSpace(awayTeam.replace(" ", "+"));
+            match.setHomeTeamNoSpace(homeTeam.replace(" ", "+"));
             matches.add(match);
         }
 

@@ -126,7 +126,7 @@
                     <div class="col-4 text-left squadre" id="squadree">
                             ${match.awayScore}&ensp;&ensp;
                         <img src="${match.awayTeamCrest}" height="45" width="45">&ensp;
-                        <a class="squadre" href="http://localhost:8080/servlet_football/team?name=${match.awayTeam}&crest=${match.awayTeamCrest}&competitioncode=${competitioncode}" id="squadre">
+                        <a class="squadre" href="http://localhost:8080/servlet_football/team?name=${match.awayTeamNoSpace}&crest=${match.awayTeamCrest}&competitioncode=${competitioncode}" id="squadre">
                             ${match.awayTeam}
                         </a>
                     </div>
