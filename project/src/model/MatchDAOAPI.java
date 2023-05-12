@@ -5,6 +5,7 @@ import dao.MatchDAO;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -147,6 +148,7 @@ public class MatchDAOAPI implements MatchDAO {
 
             MatchBean match = new MatchBean(matchID, date, season, matchday, homeTeamID, awayTeamID, homeTeam, awayTeam, homeScore, awayScore, homeTeamCrest, awayTeamCrest, status);
             match.setAwayTeamNoSpace(awayTeam.replace(" ", "+"));
+            System.out.println(match.getAwayTeamNoSpace());
             match.setHomeTeamNoSpace(homeTeam.replace(" ", "+"));
             matches.add(match);
         }

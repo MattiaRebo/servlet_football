@@ -20,9 +20,4 @@ public class servletCompetition extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
-
-    @Override
-    protected void doPost(javax.servlet.http.HttpServletRequest req, javax.servlet.http.HttpServletResponse resp) throws javax.servlet.ServletException, java.io.IOException {
-        doGet(req, resp);
-    }
 }

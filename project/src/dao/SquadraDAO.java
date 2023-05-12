@@ -7,5 +7,6 @@ import java.text.ParseException;
 import java.util.ArrayList;
 
 public interface SquadraDAO {
-    ArrayList<SquadraBean> getStanding(String comp) throws IOException, InterruptedException, ParseException;
+    ArrayList<SquadraBean> getStanding(String comp, int season) throws IOException, InterruptedException, ParseException;
+    SquadraBean getTeam(String team) throws IOException, InterruptedException, ParseException;
 }

@@ -57,7 +57,7 @@
         </div>
 
         <div class="col-12 d-flex justify-content-center pt-3">
-            <a href="http://localhost:8080/servlet_football/home"> <i class="fa-solid fa-circle-arrow-left fa-6x" style="color: #5a5858;"></i></a>
+            <a href="http://localhost:8080/servlet_football/home"> <i class="fa-solid fa-circle-arrow-left fa-4x" style="color: #5a5858;"></i></a>
         </div>
     </div>
 </body>

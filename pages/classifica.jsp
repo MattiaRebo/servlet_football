@@ -48,6 +48,14 @@
 
 
     <div class="container">
+        <div class="d-flex justify-content-center row pt-4">
+            <div class="col-12 text-center"><b style="font-size: 1.4rem">Stagione</b></div>
+            <select class="col-12 form-select form-select-sm w-auto" id="dropdown_season" aria-label=".form-select-sm example">
+                <option value="2022">2022/2023</option>
+                <option value="2021">2021/2022</option>
+                <option value="2020">2020/2021</option>
+            </select>
+        </div>
         <div class="row d-flex align-items-center header">
             <div class="col-7 row"></div>
             <div class="col-5 d-flex justify-content-around" style="font-size: 1.5rem; font-weight: bold">
@@ -61,16 +69,15 @@
         </div>
 
         <c:forEach items="${classifica}" var="squadra">
-            <div class="row riga d-flex align-items-center">
+            <div class="row riga d-flex align-items-center align-middle">
                 <div class="col-7 squadre row">
-                    <div class="col-2 text-end align-middle">
+                    <div class="col-2 text-end">
                         ${squadra.position}
                     </div>
-                    <div class="col-5">
-                        <img src="${squadra.crest} "height="25" width="25">
+                    <div class="col-7">
+                        <img src="${squadra.crest}" class="img-fluid" height="40" width="40">
                         &emsp;${squadra.name}
                     </div>
-                    <div class="col-2"></div>
                 </div>
                 <div class="col-5 d-flex justify-content-around" style="font-size: 1.1rem;">
                     <div class="text-center justify-content-around" style="width: 50px">${squadra.matchPlayed}</div>
@@ -85,8 +92,19 @@
     </div>
 
     <div class="col-12 d-flex justify-content-center pt-4 pb-4">
-        <a href="http://localhost:8080/servlet_football/home"> <i class="fa-solid fa-circle-arrow-left fa-6x" style="color: #5a5858;"></i></a>
+        <a href="http://localhost:8080/servlet_football/home"> <i class="fa-solid fa-circle-arrow-left fa-4x" style="color: #5a5858;"></i></a>
     </div>
 </div>
 </body>
 </html>
+
+<script type="text/javascript">
+    $("#dropdown_season").val("${season}");
+
+    $("#dropdown_season").on('change', function (){
+        var season = document.getElementById("dropdown_season").value;
+        var link = "http://localhost:8080/servlet_football/standing?matchday="+ ${matchday} +"&season="+ season +"&competitioncode=${competitioncode}&competitions=${competition}&emblem=${emblem}";
+
+        document.open(link, "_self", "get");
+    });
+</script>

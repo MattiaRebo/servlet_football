@@ -31,7 +31,7 @@ public class SquadraDAOAPI implements SquadraDAO {
     }
 
     public SquadraBean getTeam(String team) throws IOException, InterruptedException {
-        String stringRequest = "http://localhost:9111/squadra/"+team;
+        String stringRequest = "http://localhost:9111/squadra/"+team.replace(" ", "+");
         HttpRequest request = requestAPI(stringRequest);
         HttpResponse<String> response = response(request);
         System.out.println(response);
@@ -43,8 +43,8 @@ public class SquadraDAOAPI implements SquadraDAO {
         return new SquadraBean(city, region);
     }
 
-    public ArrayList<SquadraBean> getStanding(String comp) throws IOException, InterruptedException, ParseException {
-        String stringRequest = "https://api.football-data.org/v4/competitions/"+comp+"/standings";
+    public ArrayList<SquadraBean> getStanding(String comp, int season) throws IOException, InterruptedException, ParseException {
+        String stringRequest = "https://api.football-data.org/v4/competitions/"+comp+"/standings?season="+season;
         //request
         HttpRequest request = requestAPI(stringRequest);
         //response

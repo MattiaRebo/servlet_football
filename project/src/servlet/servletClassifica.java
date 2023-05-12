@@ -26,7 +26,7 @@ public class servletClassifica extends HttpServlet {
             req.setAttribute("competitioncode", competitioncode);
             req.setAttribute("comp", competition);
             req.setAttribute("emblem", emblem);
-            req.setAttribute("classifica", standingDAO.getStanding(competitioncode));
+            req.setAttribute("classifica", standingDAO.getStanding(competitioncode, season));
 
         } catch (InterruptedException | ParseException e) {
             throw new RuntimeException(e);

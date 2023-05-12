@@ -20,7 +20,8 @@
     <script
             src="https://code.jquery.com/jquery-3.6.4.js"
             integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous">
+    </script>
 
     <!-- import Bottstrap 5.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -48,14 +49,14 @@
     </div>
 
     <div class="ms-5 me-5">
-        <div class="row g-2 align-middle">
+        <div class="row g-2 d-flex align-middle">
             <div class="col-7 text-center" id="title">
                 Calendario e risultati
             </div>
-            <div class="col-5 row d-flex justify-content-around align-bottom">
-                    <div class="col-2 align-bottom">
-                        <div>Giornata</div>
-                        <select class="form-select form-select-sm w-auto" id="dropdown_matchday" name="dropdown_matchday" aria-label=".form-select-sm example">
+            <div class="col-5 row d-flex justify-content-around align-bottom pt-4">
+                    <div class="col-6 align-bottom row d-flex justify-content-center">
+                        <div class="col-12 text-center" style="font-size: 1.3rem"><b>Giornata</b></div>
+                        <select class="col-12 form-select form-select-sm w-auto" id="dropdown_matchday" name="dropdown_matchday" aria-label=".form-select-sm example">
                             <option value="38">38a giornata</option>
                             <option value="37">37a giornata</option>
                             <option value="36">36a giornata</option>
@@ -96,9 +97,9 @@
                             <option value="1">1a giornata</option>
                         </select>
                     </div>
-                    <div class="col-3">
-                        <div class="">Stagione</div>
-                        <select class="form-select form-select-sm w-auto" id="dropdown_season" aria-label=".form-select-sm example">
+                    <div class="col-6 align-bottom row d-flex justify-content-center">
+                        <div class="col-12 text-center" style="font-size: 1.3rem"><b>Stagione</b></div>
+                        <select class="col-12 form-select form-select-sm w-auto" id="dropdown_season" aria-label=".form-select-sm example">
                             <option value="2022">2022/2023</option>
                             <option value="2021">2021/2022</option>
                             <option value="2020">2020/2021</option>
@@ -138,7 +139,7 @@
         </div>
 
         <div class="col-12 d-flex justify-content-center pt-1 pb-4">
-            <a href="http://localhost:8080/servlet_football/home"> <i class="fa-solid fa-circle-arrow-left fa-6x" style="color: #5a5858;"></i></a>
+            <a href="http://localhost:8080/servlet_football/home"> <i class="fa-solid fa-circle-arrow-left fa-4x" style="color: #5a5858;"></i></a>
         </div>
     </div>
 </body>

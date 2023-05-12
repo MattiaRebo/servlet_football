@@ -46,7 +46,7 @@
     <p><b>City: </b><i>${team.city}</i></p>
   </div>
   <div class="col-12 d-flex justify-content-center">
-    <a href="http://localhost:8080/servlet_football/competition?competition=${competitioncode}"> <i class="fa-solid fa-circle-arrow-left fa-6x" style="color: #5a5858;"></i></a>
+    <a href="http://localhost:8080/servlet_football/competition?competition=${competitioncode}"> <i class="fa-solid fa-circle-arrow-left fa-4x" style="color: #5a5858;"></i></a>
   </div>
  </div>
 </body>
