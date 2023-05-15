@@ -40,9 +40,9 @@
                     </p>
                 </div>
                 <div class="row align-left text-center menu d-flex justify-content-center justify-content-lg-start">
-                    <div class="col-12 col-lg-3 element"><a href="http://localhost:8080:8080/servlet_football/competition?competition=${competitioncode}">Informazioni</a></div>
-                    <div class="col-12 col-lg-3 disable"><a href="http://localhost:8080/servlet_football/match?matchday=${currentMatchday}&season=${year}&competitioncode=${competitioncode}&competitions=${comp}&emblem=${emblem}">Partite</a></div>
-                    <div class="col-12 col-lg-3 element"><a href="http://localhost:8080/servlet_football/standing?matchday=${matchday}&season=${season}&competitioncode=${competitioncode}&competitions=${comp}&emblem=${emblem}">Classifica</a></div>
+                    <div class="col-12 col-lg-3 element"><a href="http://104.46.43.181:8080:8080/servlet_football/competition?competition=${competitioncode}">Informazioni</a></div>
+                    <div class="col-12 col-lg-3 disable"><a href="http://104.46.43.181:8080/servlet_football/match?matchday=${currentMatchday}&season=${year}&competitioncode=${competitioncode}&competitions=${comp}&emblem=${emblem}">Partite</a></div>
+                    <div class="col-12 col-lg-3 element"><a href="http://104.46.43.181:8080/servlet_football/standing?matchday=${matchday}&season=${season}&competitioncode=${competitioncode}&competitions=${comp}&emblem=${emblem}">Classifica</a></div>
                 </div>
             </div>
         </div>
@@ -116,7 +116,7 @@
                 </div>
                 <div class="col-9 d-flex justify-content-center align-middle" id="squadree">
                     <div class="col-4 text-end">
-                        <a class="squadre" href="http://localhost:8080/servlet_football/team?name=${match.homeTeam}&crest=${match.homeTeamCrest}&competitioncode=${competitioncode}" id="squadre">
+                        <a class="squadre" href="http://104.46.43.181:8080/servlet_football/team?name=${match.homeTeam}&crest=${match.homeTeamCrest}&competitioncode=${competitioncode}" id="squadre">
                                 ${match.homeTeam}</a>&ensp;
                         <img src="${match.homeTeamCrest}" height="45" width="45">
                         &ensp;&ensp;${match.homeScore}
@@ -127,7 +127,7 @@
                     <div class="col-4 text-left squadre" id="squadree">
                             ${match.awayScore}&ensp;&ensp;
                         <img src="${match.awayTeamCrest}" height="45" width="45">&ensp;
-                        <a class="squadre" href="http://localhost:8080/servlet_football/team?name=${match.awayTeamNoSpace}&crest=${match.awayTeamCrest}&competitioncode=${competitioncode}" id="squadre">
+                        <a class="squadre" href="http://104.46.43.181:8080/servlet_football/team?name=${match.awayTeamNoSpace}&crest=${match.awayTeamCrest}&competitioncode=${competitioncode}" id="squadre">
                             ${match.awayTeam}
                         </a>
                     </div>
@@ -139,13 +139,13 @@
         </div>
 
         <div class="col-12 d-flex justify-content-center pt-1 pb-4">
-            <a href="http://localhost:8080/servlet_football/home"> <i class="fa-solid fa-circle-arrow-left fa-4x" style="color: #5a5858;"></i></a>
+            <a href="http://104.46.43.181:8080/servlet_football/home"> <i class="fa-solid fa-circle-arrow-left fa-4x" style="color: #5a5858;"></i></a>
         </div>
     </div>
 </body>
 </html>
 
-<!-- <a href="http://localhost:8080/servlet_football/team?name=${match.awayTeam}&crest=${match.awayTeamCrest}" style="text-decoration: none; color: black;:hover{color: #1616e8}"> -->
+<!-- <a href="http://104.46.43.181:8080/servlet_football/team?name=${match.awayTeam}&crest=${match.awayTeamCrest}" style="text-decoration: none; color: black;:hover{color: #1616e8}"> -->
 
 
 <script type="text/javascript">
@@ -157,7 +157,7 @@
         $("#dropdown_season").on('change', function (){
             var match = document.getElementById("dropdown_matchday").value;
             var season = document.getElementById("dropdown_season").value;
-            var link = "http://localhost:8080/servlet_football/match?matchday="+ match +"&season="+ season +"&competitioncode=${competitioncode}&competitions=${competition}&emblem=${emblem}";
+            var link = "http://104.46.43.181:8080/servlet_football/match?matchday="+ match +"&season="+ season +"&competitioncode=${competitioncode}&competitions=${competition}&emblem=${emblem}";
 
             document.open(link, "_self", "get");
         });
@@ -165,7 +165,7 @@
         $("#dropdown_matchday").on('change', function (){
             var match = document.getElementById("dropdown_matchday").value;
             var season = document.getElementById("dropdown_season").value;
-            var link = "http://localhost:8080/servlet_football/match?matchday="+ match +"&season="+ season+"&competitioncode=${competitioncode}&competitions=${competition}&emblem=${emblem}";
+            var link = "http://104.46.43.181:8080/servlet_football/match?matchday="+ match +"&season="+ season+"&competitioncode=${competitioncode}&competitions=${competition}&emblem=${emblem}";
 
             document.open(link, "_self", "get");
         });
